@@ -24,7 +24,7 @@ class Thread extends Eloquent
      *
      * @var array
      */
-    protected $fillable = ['subject'];
+    protected $fillable = ['subject', 'order_id'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -63,6 +63,19 @@ class Thread extends Eloquent
     }
 
     /**
+     * Orders relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     *
+     * @codeCoverageIgnore
+     */
+
+
+    public function order() {
+        return $this->belongsTo('\App\Order', 'order_id', 'id');
+    }
+
+    /**
      * Returns the latest message from a thread.
      *
      * @return null|\Cmgmyr\Messenger\Models\Message
@@ -91,8 +104,7 @@ class Thread extends Eloquent
      *
      * @codeCoverageIgnore
      */
-    public function users()
-    {
+    public function users() {
         return $this->belongsToMany(Models::classname('User'), Models::table('participants'), 'thread_id', 'user_id');
     }
 
