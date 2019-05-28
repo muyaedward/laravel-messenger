@@ -18,7 +18,6 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->integer('thread_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->string('filename')->nullable();
             $table->text('body');
             $table->timestamps();
         });

@@ -29,7 +29,7 @@ class Message extends Eloquent
      *
      * @var array
      */
-    protected $fillable = ['thread_id', 'user_id', 'body', 'filename'];
+    protected $fillable = ['thread_id', 'user_id', 'body'];
 
     /**
      * The attributes that should be mutated to dates.
