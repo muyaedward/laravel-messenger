@@ -15,6 +15,6 @@ trait ProductMessagable
      * @codeCoverageIgnore
      */
     public function messages() {
-        return $this->hasMany(Models::classname(Message::class));
+        return $this->hasMany(Models::classname(Message::class), 'product_id');
     } 
 }
