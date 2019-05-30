@@ -25,6 +25,8 @@ class Models
      */
     private static $userModelLookupKey = 'User';
 
+    private static $productModelLookupKey = 'Product';
+
     /**
      * Set the model to be used for threads.
      *
@@ -63,6 +65,17 @@ class Models
     public static function setUserModel($model)
     {
         static::$models[self::$userModelLookupKey] = $model;
+    }
+
+
+    /**
+     * Set the model to be used for products.
+     *
+     * @param  string  $model
+     */
+    public static function setProductModel($model)
+    {
+        static::$models[self::$productModelLookupKey] = $model;
     }
 
     /**
@@ -147,6 +160,18 @@ class Models
     public static function user(array $attributes = [])
     {
         return static::make(self::$userModelLookupKey, $attributes);
+    }
+
+
+    /**
+     * Get an instance of the product model.
+     *
+     * @param  array  $attributes
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public static function product(array $attributes = [])
+    {
+        return static::make(self::$productModelLookupKey, $attributes);
     }
 
     /**

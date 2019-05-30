@@ -29,7 +29,7 @@ class Message extends Eloquent
      *
      * @var array
      */
-    protected $fillable = ['thread_id', 'user_id', 'body'];
+    protected $fillable = ['thread_id', 'user_id', 'product_id', 'body'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -70,6 +70,18 @@ class Message extends Eloquent
     public function user()
     {
         return $this->belongsTo(Models::user(), 'user_id');
+    }
+
+
+    /**
+     * Product relationship.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     *
+     * @codeCoverageIgnore
+     */
+    public function product() {
+        return $this->belongsTo(Models::product(), 'product_id');
     }
 
     /**

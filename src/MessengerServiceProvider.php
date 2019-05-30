@@ -20,6 +20,7 @@ class MessengerServiceProvider extends ServiceProvider
         $this->offerPublishing();
         $this->setMessengerModels();
         $this->setUserModel();
+        $this->setProductModel();
     }
 
     /**
@@ -100,6 +101,24 @@ class MessengerServiceProvider extends ServiceProvider
 
         Models::setTables([
             'users' => (new $model)->getTable(),
+        ]);
+    }
+
+
+    /**
+     * Define Product model in Messenger's model registry.
+     *
+     * @return void
+     */
+    protected function setProductModel() {
+        $config = $this->app->make('config');
+        $model = $config->get('messenger.product.model');
+        $table = $config->get('messenger.product.table');
+
+        Models::setProductModel($model);
+
+        Models::setTables([
+            $table => (new $model)->getTable(),
         ]);
     }
 }

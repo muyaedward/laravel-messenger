@@ -4,6 +4,11 @@ return [
 
     'user_model' => App\User::class,
 
+    'product' => [
+        'model' => App\Order::class,
+        'table' => 'orders'
+    ],
+
     'message_model' => Muyaedward\Messenger\Models\Message::class,
 
     'participant_model' => Muyaedward\Messenger\Models\Participant::class,
