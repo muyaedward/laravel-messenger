@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmgmyr\Messenger;
+namespace Muyaedward\Messenger;
 
 use Muyaedward\Messenger\Models\Message;
 use Muyaedward\Messenger\Models\Models;
