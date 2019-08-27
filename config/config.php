@@ -2,12 +2,7 @@
 
 return [
 
-    'user_model' => App\User::class,
-
-    'product' => [
-        'model' => App\Order::class,
-        'table' => 'orders'
-    ],
+    // 'user_model' => App\Models\User::class,
 
     'message_model' => Muyaedward\Messenger\Models\Message::class,
 

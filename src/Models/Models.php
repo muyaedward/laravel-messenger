@@ -25,8 +25,6 @@ class Models
      */
     private static $userModelLookupKey = 'User';
 
-    private static $productModelLookupKey = 'Product';
-
     /**
      * Set the model to be used for threads.
      *
@@ -65,17 +63,6 @@ class Models
     public static function setUserModel($model)
     {
         static::$models[self::$userModelLookupKey] = $model;
-    }
-
-
-    /**
-     * Set the model to be used for products.
-     *
-     * @param  string  $model
-     */
-    public static function setProductModel($model)
-    {
-        static::$models[self::$productModelLookupKey] = $model;
     }
 
     /**
@@ -122,7 +109,7 @@ class Models
      * Get an instance of the messages model.
      *
      * @param  array $attributes
-     * @return \Muyaedward\Messenger\Models\Message
+     * @return \Cmgmyr\Messenger\Models\Message
      */
     public static function message(array $attributes = [])
     {
@@ -133,7 +120,7 @@ class Models
      * Get an instance of the participants model.
      *
      * @param  array $attributes
-     * @return \Muyaedward\Messenger\Models\Participant
+     * @return \Cmgmyr\Messenger\Models\Participant
      */
     public static function participant(array $attributes = [])
     {
@@ -144,7 +131,7 @@ class Models
      * Get an instance of the threads model.
      *
      * @param  array $attributes
-     * @return \Muyaedward\Messenger\Models\Thread
+     * @return \Cmgmyr\Messenger\Models\Thread
      */
     public static function thread(array $attributes = [])
     {
@@ -160,18 +147,6 @@ class Models
     public static function user(array $attributes = [])
     {
         return static::make(self::$userModelLookupKey, $attributes);
-    }
-
-
-    /**
-     * Get an instance of the product model.
-     *
-     * @param  array  $attributes
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public static function product(array $attributes = [])
-    {
-        return static::make(self::$productModelLookupKey, $attributes);
     }
 
     /**

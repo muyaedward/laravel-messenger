@@ -2,11 +2,11 @@
 
 namespace Muyaedward\Messenger\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Carbon;
 
 class Thread extends Eloquent
 {
@@ -65,7 +65,7 @@ class Thread extends Eloquent
     /**
      * Returns the latest message from a thread.
      *
-     * @return null|\Muyaedward\Messenger\Models\Message
+     * @return null|\Cmgmyr\Messenger\Models\Message
      */
     public function getLatestMessageAttribute()
     {
