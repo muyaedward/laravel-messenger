@@ -13,16 +13,16 @@
     ],
     "require": {
         "php": ">=5.5.0",
-        "illuminate/config": "^5.5|^6.0",
-        "illuminate/support": "^5.5|^6.0",
-        "illuminate/database": "^5.5|^6.0",
+        "illuminate/config": "^5.5|^6.*",
+        "illuminate/support": "^5.5|^6.*",
+        "illuminate/database": "^5.5|^6.*",
         "nesbot/carbon": "^1.0|^2.0"
     },
     "require-dev": {
         "adamwathan/faktory": "0.3.*",
         "friendsofphp/php-cs-fixer": "^2.5",
         "orchestra/testbench": "~3.0",
-        "phpunit/phpunit": "4.*|5.*|7.*|8.*"
+        "phpunit/phpunit": "7.*|8.*"
     },
     "autoload": {
         "psr-4": {
